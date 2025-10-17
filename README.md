@@ -1,4 +1,4 @@
-This repository contains a Bonsai workflow for reading data from a torque sensor connected to a harp.treadmill board (see the full project at AllenNeuralDynamics/harp.device.treadmill-driver). The workflow allows you to visualize the data and transform it into a sound frequency.
+This repository contains a Bonsai workflow for reading data from a torque sensor connected to a harp.treadmill board (see the full project at [AllenNeuralDynamics/harp.device.treadmill-driver](https://github.com/AllenNeuralDynamics/harp.device.treadmill-driver)). The workflow allows you to visualize the data and transform it into a sound frequency.
 It also includes a portable version of Bonsai with all the necessary packages to run the workflow.
 
 
