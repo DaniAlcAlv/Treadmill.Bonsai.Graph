@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AllenNeuralDynamics.Core</id>
+    <version>0.4.1</version>
+    <title>AllenNeuralDynamics.Core</title>
+    <authors>Bruno Cruz</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://allenneuraldynamics.github.io/Bonsai.AllenNeuralDynamics/</projectUrl>
+    <description>A bonsai package for core primitives used in AIND experiments.</description>
+    <copyright>Copyright © 2024 Allen Institute for Neural Dynamics</copyright>
+    <tags>Bonsai Rx Core AllenNeuralDynamics</tags>
+    <packageTypes>
+      <packageType name="Dependency" />
+      <packageType name="BonsaiLibrary" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/AllenNeuralDynamics/bonsai.allen-neural-dynamics" commit="1ce3df647bc6731268935b83a808063e9f8306d0" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="AllenNeuralDynamics.AindBehaviorServices" version="0.8.0" exclude="Build,Analyzers" />
+        <dependency id="BonVision" version="0.11.0" exclude="Build,Analyzers" />
+        <dependency id="Bonsai.Core" version="2.8.2" exclude="Build,Analyzers" />
+        <dependency id="Bonsai.Design" version="2.8.1" exclude="Build,Analyzers" />
+        <dependency id="Bonsai.Harp" version="3.6.0" exclude="Build,Analyzers" />
+        <dependency id="Bonsai.Scripting.Expressions" version="2.8.0" exclude="Build,Analyzers" />
+        <dependency id="Bonsai.Spinnaker" version="0.7.1" exclude="Build,Analyzers" />
+        <dependency id="Bonsai.Vision" version="2.8.1" exclude="Build,Analyzers" />
+        <dependency id="MathNet.Numerics" version="4.15.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

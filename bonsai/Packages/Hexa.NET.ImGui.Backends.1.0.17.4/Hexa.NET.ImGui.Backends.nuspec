@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Hexa.NET.ImGui.Backends</id>
+    <version>1.0.17.4</version>
+    <authors>Juna Meinhold</authors>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/HexaEngine/Hexa.NET.ImGui</projectUrl>
+    <description>A .NET wrapper for the Dear ImGui (1.92.1) library backends (Win32, Vulkan, OpenGL2, OpenGL3, D3D11, D3D12, OSX, Metal, Android).</description>
+    <copyright>Copyright (c) 2024 Juna Meinhold</copyright>
+    <tags>ImGui Backends UI Immidate GUI Hexa HexaGen Source Generator C# .NET DotNet Sharp Windows macOS Android Bindings Wrapper Native</tags>
+    <repository type="git" url="https://github.com/HexaEngine/Hexa.NET.ImGui" commit="d32178601353430ef9c1df507dc72e34712d5e45" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Hexa.NET.ImGui" version="2.2.8.4" exclude="Build,Analyzers" />
+        <dependency id="HexaGen.Runtime" version="1.1.21" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net7.0">
+        <dependency id="Hexa.NET.ImGui" version="2.2.8.4" exclude="Build,Analyzers" />
+        <dependency id="HexaGen.Runtime" version="1.1.21" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0">
+        <dependency id="Hexa.NET.ImGui" version="2.2.8.4" exclude="Build,Analyzers" />
+        <dependency id="HexaGen.Runtime" version="1.1.21" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net9.0">
+        <dependency id="Hexa.NET.ImGui" version="2.2.8.4" exclude="Build,Analyzers" />
+        <dependency id="HexaGen.Runtime" version="1.1.21" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Hexa.NET.ImGui" version="2.2.8.4" exclude="Build,Analyzers" />
+        <dependency id="HexaGen.Runtime" version="1.1.21" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="Hexa.NET.ImGui" version="2.2.8.4" exclude="Build,Analyzers" />
+        <dependency id="HexaGen.Runtime" version="1.1.21" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

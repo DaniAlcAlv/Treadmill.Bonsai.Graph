@@ -1,0 +1,1675 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AllenNeuralDynamics.Treadmill</name>
+    </assembly>
+    <members>
+        <member name="T:AllenNeuralDynamics.Treadmill.Device">
+            <inheritdoc/>
+            <summary>
+            Generates events and processes commands for the Treadmill device connected
+            at the specified serial port.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.Device.CreateAsync(System.String)">
+            <summary>
+            Initializes a new instance of the asynchronous API to configure and interface
+            with Treadmill devices on the specified serial port.
+            </summary>
+            <param name="portName">
+            The name of the serial port used to communicate with the Harp device.
+            </param>
+            <returns>
+            A task that represents the asynchronous initialization operation. The value of
+            the <see cref="P:System.Threading.Tasks.Task`1.Result"/> parameter contains a new instance of
+            the <see cref="T:AllenNeuralDynamics.Treadmill.AsyncDevice"/> class.
+            </returns>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.Device.WhoAmI">
+            <summary>
+            Represents the unique identity class of the <see cref="N:AllenNeuralDynamics.Treadmill"/> device.
+            This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.Device.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.Treadmill.Device"/> class.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.Treadmill.Device.RegisterMap">
+            <summary>
+            Gets a read-only mapping from address to register type.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.Device.Metadata">
+            <summary>
+            Gets the contents of the metadata file describing the <see cref="N:AllenNeuralDynamics.Treadmill"/>
+            device registers.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.AsyncDevice">
+            <summary>
+            Represents an asynchronous API to configure and interface with Treadmill devices.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadEncoderAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the Encoder register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTimestampedEncoderAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the Encoder register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTorqueAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the Torque register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTimestampedTorqueAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the Torque register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTorqueLoadCurrentAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the TorqueLoadCurrent register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTimestampedTorqueLoadCurrentAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the TorqueLoadCurrent register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadSensorDataAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the SensorData register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTimestampedSensorDataAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the SensorData register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadSensorDataDispatchRateAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the SensorDataDispatchRate register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTimestampedSensorDataDispatchRateAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the SensorDataDispatchRate register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.WriteSensorDataDispatchRateAsync(System.UInt16,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the SensorDataDispatchRate register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadBrakeCurrentSetPointAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the BrakeCurrentSetPoint register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTimestampedBrakeCurrentSetPointAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the BrakeCurrentSetPoint register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.WriteBrakeCurrentSetPointAsync(System.UInt16,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the BrakeCurrentSetPoint register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTareSensorsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the TareSensors register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTimestampedTareSensorsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the TareSensors register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.WriteTareSensorsAsync(AllenNeuralDynamics.Treadmill.Sensors,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the TareSensors register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadResetTareSensorsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the ResetTareSensors register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTimestampedResetTareSensorsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the ResetTareSensors register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.WriteResetTareSensorsAsync(AllenNeuralDynamics.Treadmill.Sensors,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the ResetTareSensors register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadEnableTorqueLimitAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the EnableTorqueLimit register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTimestampedEnableTorqueLimitAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the EnableTorqueLimit register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.WriteEnableTorqueLimitAsync(Bonsai.Harp.EnableFlag,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the EnableTorqueLimit register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTorqueLimitStateAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the TorqueLimitState register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.ReadTimestampedTorqueLimitStateAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the TorqueLimitState register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.AsyncDevice.WriteTorqueLimitStateAsync(System.Byte,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the TorqueLimitState register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.GetMetadata">
+            <summary>
+            Represents an operator that returns the contents of the metadata file
+            describing the <see cref="N:AllenNeuralDynamics.Treadmill"/> device registers.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.GetMetadata.Generate">
+            <summary>
+            Returns an observable sequence with the contents of the metadata file
+            describing the <see cref="N:AllenNeuralDynamics.Treadmill"/> device registers.
+            </summary>
+            <returns>
+            A sequence with a single <see cref="T:System.String"/> object representing the
+            contents of the metadata file.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.GroupByRegister">
+            <summary>
+            Represents an operator that groups the sequence of <see cref="N:AllenNeuralDynamics.Treadmill"/>" messages by register type.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.GroupByRegister.Process(System.IObservable{Bonsai.Harp.HarpMessage})">
+            <summary>
+            Groups an observable sequence of <see cref="N:AllenNeuralDynamics.Treadmill"/> messages
+            by register type.
+            </summary>
+            <param name="source">The sequence of Harp device messages.</param>
+            <returns>
+            A sequence of observable groups, each of which corresponds to a unique
+            <see cref="N:AllenNeuralDynamics.Treadmill"/> register.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.FilterRegister">
+            <summary>
+            Represents an operator that filters register-specific messages
+            reported by the <see cref="N:AllenNeuralDynamics.Treadmill"/> device.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.Encoder"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.Torque"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.SensorData"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.FilterRegister.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.Treadmill.FilterRegister"/> class.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.Parse">
+            <summary>
+            Represents an operator which filters and selects specific messages
+            reported by the Treadmill device.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.Encoder"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.Torque"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.SensorData"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.Parse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.Treadmill.Parse"/> class.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.Format">
+            <summary>
+            Represents an operator which formats a sequence of values as specific
+            Treadmill register messages.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.Encoder"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.Torque"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.SensorData"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.Format.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.Treadmill.Format"/> class.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.Encoder">
+            <summary>
+            Represents a register that contains the current accumulated number of ticks.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.Encoder.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.Encoder"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.Encoder.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.Treadmill.Encoder"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.Encoder.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.Treadmill.Encoder"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.Encoder.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.Treadmill.Encoder"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.Encoder.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.Encoder"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.Encoder.FromPayload(Bonsai.Harp.MessageType,System.Int32)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.Encoder"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.Encoder"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.Encoder.FromPayload(System.Double,Bonsai.Harp.MessageType,System.Int32)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.Encoder"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.Encoder"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.TimestampedEncoder">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            Encoder register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.Encoder"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TimestampedEncoder.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.Encoder"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TimestampedEncoder.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.Encoder"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.Torque">
+            <summary>
+            Represents a register that contains the current torque value.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.Torque.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.Torque"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.Torque.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.Treadmill.Torque"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.Torque.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.Treadmill.Torque"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.Torque.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.Treadmill.Torque"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.Torque.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.Torque"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.Torque.FromPayload(Bonsai.Harp.MessageType,System.Int16)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.Torque"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.Torque"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.Torque.FromPayload(System.Double,Bonsai.Harp.MessageType,System.Int16)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.Torque"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.Torque"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.TimestampedTorque">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            Torque register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.Torque"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TimestampedTorque.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.Torque"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TimestampedTorque.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.Torque"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent">
+            <summary>
+            Represents a register that contains the current output current applied to the variable torque load.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent.FromPayload(Bonsai.Harp.MessageType,System.Int16)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent.FromPayload(System.Double,Bonsai.Harp.MessageType,System.Int16)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.TimestampedTorqueLoadCurrent">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            TorqueLoadCurrent register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TimestampedTorqueLoadCurrent.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TimestampedTorqueLoadCurrent.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLoadCurrent"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.SensorData">
+            <summary>
+            Represents a register that emits a periodic event containing the packaged treadmill data. [Encoder, Torque, TorqueLoadCurrent].
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.SensorData.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.SensorData"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.SensorData.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.Treadmill.SensorData"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.SensorData.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.Treadmill.SensorData"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.SensorData.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.Treadmill.SensorData"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.SensorData.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.SensorData"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.SensorData.FromPayload(Bonsai.Harp.MessageType,AllenNeuralDynamics.Treadmill.SensorDataPayload)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.SensorData"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.SensorData"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.SensorData.FromPayload(System.Double,Bonsai.Harp.MessageType,AllenNeuralDynamics.Treadmill.SensorDataPayload)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.SensorData"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.SensorData"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.TimestampedSensorData">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            SensorData register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.SensorData"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TimestampedSensorData.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.SensorData"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TimestampedSensorData.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.SensorData"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate">
+            <summary>
+            Represents a register that value greater than 0 will enable the periodic dispatch of treadmill data events at the specified rate (sp/s).
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate.FromPayload(Bonsai.Harp.MessageType,System.UInt16)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate.FromPayload(System.Double,Bonsai.Harp.MessageType,System.UInt16)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.TimestampedSensorDataDispatchRate">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            SensorDataDispatchRate register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TimestampedSensorDataDispatchRate.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TimestampedSensorDataDispatchRate.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.SensorDataDispatchRate"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint">
+            <summary>
+            Represents a register that sets the raw value of the torque set-point to be applied to the treadmill. This value is cleared to 0 if torque_limiting is enabled and triggered. Further writes in this condition return a WRITE_ERROR.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint.FromPayload(Bonsai.Harp.MessageType,System.UInt16)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint.FromPayload(System.Double,Bonsai.Harp.MessageType,System.UInt16)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.TimestampedBrakeCurrentSetPoint">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            BrakeCurrentSetPoint register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TimestampedBrakeCurrentSetPoint.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TimestampedBrakeCurrentSetPoint.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.BrakeCurrentSetPoint"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.TareSensors">
+            <summary>
+            Represents a register that tares the specified sensors.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TareSensors.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TareSensors.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TareSensors.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TareSensors.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TareSensors.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TareSensors.FromPayload(Bonsai.Harp.MessageType,AllenNeuralDynamics.Treadmill.Sensors)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TareSensors.FromPayload(System.Double,Bonsai.Harp.MessageType,AllenNeuralDynamics.Treadmill.Sensors)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.TimestampedTareSensors">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            TareSensors register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TimestampedTareSensors.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TimestampedTareSensors.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.TareSensors"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.ResetTareSensors">
+            <summary>
+            Represents a register that removes the tare from the specified sensors.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.ResetTareSensors.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.ResetTareSensors.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.ResetTareSensors.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.ResetTareSensors.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.ResetTareSensors.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.ResetTareSensors.FromPayload(Bonsai.Harp.MessageType,AllenNeuralDynamics.Treadmill.Sensors)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.ResetTareSensors.FromPayload(System.Double,Bonsai.Harp.MessageType,AllenNeuralDynamics.Treadmill.Sensors)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.TimestampedResetTareSensors">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            ResetTareSensors register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TimestampedResetTareSensors.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TimestampedResetTareSensors.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.ResetTareSensors"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit">
+            <summary>
+            Represents a register that enables(1)/Disables(0) the brake if the maximum torque sensor value is detected. This register will be enabled by default.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.EnableTorqueLimit.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.EnableTorqueLimit.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.EnableTorqueLimit.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.EnableTorqueLimit.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.EnableTorqueLimit.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.EnableTorqueLimit.FromPayload(Bonsai.Harp.MessageType,Bonsai.Harp.EnableFlag)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.EnableTorqueLimit.FromPayload(System.Double,Bonsai.Harp.MessageType,Bonsai.Harp.EnableFlag)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.TimestampedEnableTorqueLimit">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            EnableTorqueLimit register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TimestampedEnableTorqueLimit.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TimestampedEnableTorqueLimit.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.EnableTorqueLimit"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.TorqueLimitState">
+            <summary>
+            Represents a register that a value greater than 1 indicates that the torque limit has been triggered and the brake setpoint will be cleared. Writing a value of 0 will clear the torque limit state and re-enable the brake.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TorqueLimitState.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TorqueLimitState.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TorqueLimitState.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TorqueLimitState.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TorqueLimitState.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TorqueLimitState.FromPayload(Bonsai.Harp.MessageType,System.Byte)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TorqueLimitState.FromPayload(System.Double,Bonsai.Harp.MessageType,System.Byte)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.TimestampedTorqueLimitState">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            TorqueLimitState register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.TimestampedTorqueLimitState.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.TimestampedTorqueLimitState.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.Treadmill.TorqueLimitState"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateMessage">
+            <summary>
+            Represents an operator which creates standard message payloads for the
+            Treadmill device.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.CreateEncoderPayload"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.CreateTorquePayload"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.CreateTorqueLoadCurrentPayload"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.CreateSensorDataPayload"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.CreateSensorDataDispatchRatePayload"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.CreateBrakeCurrentSetPointPayload"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.CreateTareSensorsPayload"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.CreateResetTareSensorsPayload"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.CreateEnableTorqueLimitPayload"/>
+            <seealso cref="T:AllenNeuralDynamics.Treadmill.CreateTorqueLimitStatePayload"/>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.Treadmill.CreateMessage"/> class.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateEncoderPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that contains the current accumulated number of ticks.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.Treadmill.CreateEncoderPayload.Encoder">
+            <summary>
+            Gets or sets the value that contains the current accumulated number of ticks.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateEncoderPayload.GetPayload">
+            <summary>
+            Creates a message payload for the Encoder register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateEncoderPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that contains the current accumulated number of ticks.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the Encoder register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTimestampedEncoderPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that contains the current accumulated number of ticks.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTimestampedEncoderPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that contains the current accumulated number of ticks.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the Encoder register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTorquePayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that contains the current torque value.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.Treadmill.CreateTorquePayload.Torque">
+            <summary>
+            Gets or sets the value that contains the current torque value.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTorquePayload.GetPayload">
+            <summary>
+            Creates a message payload for the Torque register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTorquePayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that contains the current torque value.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the Torque register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTimestampedTorquePayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that contains the current torque value.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTimestampedTorquePayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that contains the current torque value.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the Torque register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTorqueLoadCurrentPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that contains the current output current applied to the variable torque load.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.Treadmill.CreateTorqueLoadCurrentPayload.TorqueLoadCurrent">
+            <summary>
+            Gets or sets the value that contains the current output current applied to the variable torque load.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTorqueLoadCurrentPayload.GetPayload">
+            <summary>
+            Creates a message payload for the TorqueLoadCurrent register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTorqueLoadCurrentPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that contains the current output current applied to the variable torque load.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the TorqueLoadCurrent register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTimestampedTorqueLoadCurrentPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that contains the current output current applied to the variable torque load.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTimestampedTorqueLoadCurrentPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that contains the current output current applied to the variable torque load.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the TorqueLoadCurrent register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateSensorDataPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that emits a periodic event containing the packaged treadmill data. [Encoder, Torque, TorqueLoadCurrent].
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.Treadmill.CreateSensorDataPayload.Encoder">
+            <summary>
+            Gets or sets a value to write on payload member Encoder.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.Treadmill.CreateSensorDataPayload.Torque">
+            <summary>
+            Gets or sets a value to write on payload member Torque.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.Treadmill.CreateSensorDataPayload.TorqueLoadCurrent">
+            <summary>
+            Gets or sets a value to write on payload member TorqueLoadCurrent.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateSensorDataPayload.GetPayload">
+            <summary>
+            Creates a message payload for the SensorData register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateSensorDataPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that emits a periodic event containing the packaged treadmill data. [Encoder, Torque, TorqueLoadCurrent].
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the SensorData register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTimestampedSensorDataPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that emits a periodic event containing the packaged treadmill data. [Encoder, Torque, TorqueLoadCurrent].
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTimestampedSensorDataPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that emits a periodic event containing the packaged treadmill data. [Encoder, Torque, TorqueLoadCurrent].
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the SensorData register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateSensorDataDispatchRatePayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that value greater than 0 will enable the periodic dispatch of treadmill data events at the specified rate (sp/s).
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.Treadmill.CreateSensorDataDispatchRatePayload.SensorDataDispatchRate">
+            <summary>
+            Gets or sets the value that value greater than 0 will enable the periodic dispatch of treadmill data events at the specified rate (sp/s).
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateSensorDataDispatchRatePayload.GetPayload">
+            <summary>
+            Creates a message payload for the SensorDataDispatchRate register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateSensorDataDispatchRatePayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that value greater than 0 will enable the periodic dispatch of treadmill data events at the specified rate (sp/s).
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the SensorDataDispatchRate register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTimestampedSensorDataDispatchRatePayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that value greater than 0 will enable the periodic dispatch of treadmill data events at the specified rate (sp/s).
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTimestampedSensorDataDispatchRatePayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that value greater than 0 will enable the periodic dispatch of treadmill data events at the specified rate (sp/s).
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the SensorDataDispatchRate register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateBrakeCurrentSetPointPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that sets the raw value of the torque set-point to be applied to the treadmill. This value is cleared to 0 if torque_limiting is enabled and triggered. Further writes in this condition return a WRITE_ERROR.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.Treadmill.CreateBrakeCurrentSetPointPayload.BrakeCurrentSetPoint">
+            <summary>
+            Gets or sets the value that sets the raw value of the torque set-point to be applied to the treadmill. This value is cleared to 0 if torque_limiting is enabled and triggered. Further writes in this condition return a WRITE_ERROR.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateBrakeCurrentSetPointPayload.GetPayload">
+            <summary>
+            Creates a message payload for the BrakeCurrentSetPoint register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateBrakeCurrentSetPointPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that sets the raw value of the torque set-point to be applied to the treadmill. This value is cleared to 0 if torque_limiting is enabled and triggered. Further writes in this condition return a WRITE_ERROR.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the BrakeCurrentSetPoint register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTimestampedBrakeCurrentSetPointPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that sets the raw value of the torque set-point to be applied to the treadmill. This value is cleared to 0 if torque_limiting is enabled and triggered. Further writes in this condition return a WRITE_ERROR.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTimestampedBrakeCurrentSetPointPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that sets the raw value of the torque set-point to be applied to the treadmill. This value is cleared to 0 if torque_limiting is enabled and triggered. Further writes in this condition return a WRITE_ERROR.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the BrakeCurrentSetPoint register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTareSensorsPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that tares the specified sensors.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.Treadmill.CreateTareSensorsPayload.TareSensors">
+            <summary>
+            Gets or sets the value that tares the specified sensors.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTareSensorsPayload.GetPayload">
+            <summary>
+            Creates a message payload for the TareSensors register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTareSensorsPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that tares the specified sensors.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the TareSensors register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTimestampedTareSensorsPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that tares the specified sensors.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTimestampedTareSensorsPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that tares the specified sensors.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the TareSensors register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateResetTareSensorsPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that removes the tare from the specified sensors.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.Treadmill.CreateResetTareSensorsPayload.ResetTareSensors">
+            <summary>
+            Gets or sets the value that removes the tare from the specified sensors.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateResetTareSensorsPayload.GetPayload">
+            <summary>
+            Creates a message payload for the ResetTareSensors register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateResetTareSensorsPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that removes the tare from the specified sensors.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the ResetTareSensors register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTimestampedResetTareSensorsPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that removes the tare from the specified sensors.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTimestampedResetTareSensorsPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that removes the tare from the specified sensors.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the ResetTareSensors register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateEnableTorqueLimitPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that enables(1)/Disables(0) the brake if the maximum torque sensor value is detected. This register will be enabled by default.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.Treadmill.CreateEnableTorqueLimitPayload.EnableTorqueLimit">
+            <summary>
+            Gets or sets the value that enables(1)/Disables(0) the brake if the maximum torque sensor value is detected. This register will be enabled by default.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateEnableTorqueLimitPayload.GetPayload">
+            <summary>
+            Creates a message payload for the EnableTorqueLimit register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateEnableTorqueLimitPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that enables(1)/Disables(0) the brake if the maximum torque sensor value is detected. This register will be enabled by default.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the EnableTorqueLimit register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTimestampedEnableTorqueLimitPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that enables(1)/Disables(0) the brake if the maximum torque sensor value is detected. This register will be enabled by default.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTimestampedEnableTorqueLimitPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that enables(1)/Disables(0) the brake if the maximum torque sensor value is detected. This register will be enabled by default.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the EnableTorqueLimit register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTorqueLimitStatePayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that a value greater than 1 indicates that the torque limit has been triggered and the brake setpoint will be cleared. Writing a value of 0 will clear the torque limit state and re-enable the brake.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.Treadmill.CreateTorqueLimitStatePayload.TorqueLimitState">
+            <summary>
+            Gets or sets the value that a value greater than 1 indicates that the torque limit has been triggered and the brake setpoint will be cleared. Writing a value of 0 will clear the torque limit state and re-enable the brake.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTorqueLimitStatePayload.GetPayload">
+            <summary>
+            Creates a message payload for the TorqueLimitState register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTorqueLimitStatePayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that a value greater than 1 indicates that the torque limit has been triggered and the brake setpoint will be cleared. Writing a value of 0 will clear the torque limit state and re-enable the brake.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the TorqueLimitState register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.CreateTimestampedTorqueLimitStatePayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that a value greater than 1 indicates that the torque limit has been triggered and the brake setpoint will be cleared. Writing a value of 0 will clear the torque limit state and re-enable the brake.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.CreateTimestampedTorqueLimitStatePayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that a value greater than 1 indicates that the torque limit has been triggered and the brake setpoint will be cleared. Writing a value of 0 will clear the torque limit state and re-enable the brake.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the TorqueLimitState register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.SensorDataPayload">
+            <summary>
+            Represents the payload of the SensorData register.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.SensorDataPayload.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.Treadmill.SensorDataPayload"/> structure.
+            </summary>
+            <param name="encoder"></param>
+            <param name="torque"></param>
+            <param name="torqueLoadCurrent"></param>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.SensorDataPayload.Encoder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.SensorDataPayload.Torque">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.Treadmill.SensorDataPayload.TorqueLoadCurrent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.Treadmill.SensorDataPayload.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the payload of
+            the SensorData register.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the payload of the
+            SensorData register.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.Treadmill.Sensors">
+            <summary>
+            Available sensors.
+            </summary>
+        </member>
+    </members>
+</doc>

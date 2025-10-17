@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AllenNeuralDynamics.SniffDetector</id>
+    <version>0.2.0</version>
+    <title>AllenNeuralDynamics.SniffDetector</title>
+    <authors>AllenNeuralDynamics.SniffDetector</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/AllenNeuralDynamics/bonsai.allen-neural-dynamics</projectUrl>
+    <description>Bonsai Library containing interfaces for data acquisition and control of AllenNeuralDynamics SniffDetector device.</description>
+    <copyright>Copyright © 2024 Allen Institute for Neural Dynamics</copyright>
+    <tags>AllenNeuralDynamics SniffDetector Bonsai Rx</tags>
+    <repository type="git" url="https://github.com/AllenNeuralDynamics/harp.device.sniff-detector" commit="50ba54952a9bd17b212373be38d86f41b3e25c61" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2">
+        <dependency id="Bonsai.Harp" version="3.5.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Bonsai.Harp" version="3.5.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

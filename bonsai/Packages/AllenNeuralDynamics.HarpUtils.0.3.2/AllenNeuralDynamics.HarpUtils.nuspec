@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AllenNeuralDynamics.HarpUtils</id>
+    <version>0.3.2</version>
+    <title>AllenNeuralDynamics.HarpUtils</title>
+    <authors>Bruno Cruz</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://allenneuraldynamics.github.io/Bonsai.AllenNeuralDynamics/</projectUrl>
+    <description>A package with utilities for the Harp devices and Harp protocol.</description>
+    <copyright>Copyright © 2024 Allen Institute for Neural Dynamics</copyright>
+    <tags>Bonsai Rx Core AllenNeuralDynamics</tags>
+    <packageTypes>
+      <packageType name="Dependency" />
+      <packageType name="BonsaiLibrary" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/AllenNeuralDynamics/bonsai.allen-neural-dynamics" commit="832c9723595e57d1268c363987c45e0dd9e6e38c" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="AllenNeuralDynamics.Core" version="0.4.0" exclude="Build,Analyzers" />
+        <dependency id="AllenNeuralDynamics.EnvironmentSensor" version="0.2.0" exclude="Build,Analyzers" />
+        <dependency id="AllenNeuralDynamics.LicketySplit" version="0.2.0" exclude="Build,Analyzers" />
+        <dependency id="AllenNeuralDynamics.SniffDetector" version="0.2.0" exclude="Build,Analyzers" />
+        <dependency id="AllenNeuralDynamics.Treadmill" version="0.2.0" exclude="Build,Analyzers" />
+        <dependency id="AllenNeuralDynamics.WhiteRabbit" version="0.2.0" exclude="Build,Analyzers" />
+        <dependency id="Bonsai.Core" version="2.8.5" exclude="Build,Analyzers" />
+        <dependency id="Bonsai.Harp" version="3.5.2" exclude="Build,Analyzers" />
+        <dependency id="Bonsai.Harp.Design" version="3.5.0" exclude="Build,Analyzers" />
+        <dependency id="Harp.AnalogInput" version="0.2.0" exclude="Build,Analyzers" />
+        <dependency id="Harp.Behavior" version="0.1.0" exclude="Build,Analyzers" />
+        <dependency id="Harp.LoadCells" version="0.2.0" exclude="Build,Analyzers" />
+        <dependency id="Harp.Olfactometer" version="0.2.0" exclude="Build,Analyzers" />
+        <dependency id="Harp.StepperDriver" version="0.3.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.3" exclude="Build,Analyzers" />
+        <dependency id="YamlDotNet" version="16.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

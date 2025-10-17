@@ -1,0 +1,428 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AllenNeuralDynamics.SniffDetector</name>
+    </assembly>
+    <members>
+        <member name="T:AllenNeuralDynamics.SniffDetector.Device">
+            <inheritdoc/>
+            <summary>
+            Generates events and processes commands for the SniffDetector device connected
+            at the specified serial port.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.Device.CreateAsync(System.String)">
+            <summary>
+            Initializes a new instance of the asynchronous API to configure and interface
+            with SniffDetector devices on the specified serial port.
+            </summary>
+            <param name="portName">
+            The name of the serial port used to communicate with the Harp device.
+            </param>
+            <returns>
+            A task that represents the asynchronous initialization operation. The value of
+            the <see cref="P:System.Threading.Tasks.Task`1.Result"/> parameter contains a new instance of
+            the <see cref="T:AllenNeuralDynamics.SniffDetector.AsyncDevice"/> class.
+            </returns>
+        </member>
+        <member name="F:AllenNeuralDynamics.SniffDetector.Device.WhoAmI">
+            <summary>
+            Represents the unique identity class of the <see cref="N:AllenNeuralDynamics.SniffDetector"/> device.
+            This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.Device.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.SniffDetector.Device"/> class.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.SniffDetector.Device.RegisterMap">
+            <summary>
+            Gets a read-only mapping from address to register type.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.SniffDetector.Device.Metadata">
+            <summary>
+            Gets the contents of the metadata file describing the <see cref="N:AllenNeuralDynamics.SniffDetector"/>
+            device registers.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.AsyncDevice">
+            <summary>
+            Represents an asynchronous API to configure and interface with SniffDetector devices.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.AsyncDevice.ReadRawVoltageAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the RawVoltage register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.AsyncDevice.ReadTimestampedRawVoltageAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the RawVoltage register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.AsyncDevice.ReadRawVoltageDispatchRateAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the RawVoltageDispatchRate register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.AsyncDevice.ReadTimestampedRawVoltageDispatchRateAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the RawVoltageDispatchRate register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.AsyncDevice.WriteRawVoltageDispatchRateAsync(System.UInt16,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the RawVoltageDispatchRate register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.GetMetadata">
+            <summary>
+            Represents an operator that returns the contents of the metadata file
+            describing the <see cref="N:AllenNeuralDynamics.SniffDetector"/> device registers.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.GetMetadata.Generate">
+            <summary>
+            Returns an observable sequence with the contents of the metadata file
+            describing the <see cref="N:AllenNeuralDynamics.SniffDetector"/> device registers.
+            </summary>
+            <returns>
+            A sequence with a single <see cref="T:System.String"/> object representing the
+            contents of the metadata file.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.GroupByRegister">
+            <summary>
+            Represents an operator that groups the sequence of <see cref="N:AllenNeuralDynamics.SniffDetector"/>" messages by register type.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.GroupByRegister.Process(System.IObservable{Bonsai.Harp.HarpMessage})">
+            <summary>
+            Groups an observable sequence of <see cref="N:AllenNeuralDynamics.SniffDetector"/> messages
+            by register type.
+            </summary>
+            <param name="source">The sequence of Harp device messages.</param>
+            <returns>
+            A sequence of observable groups, each of which corresponds to a unique
+            <see cref="N:AllenNeuralDynamics.SniffDetector"/> register.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.FilterRegister">
+            <summary>
+            Represents an operator that filters register-specific messages
+            reported by the <see cref="N:AllenNeuralDynamics.SniffDetector"/> device.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/>
+            <seealso cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.FilterRegister.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.SniffDetector.FilterRegister"/> class.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.Parse">
+            <summary>
+            Represents an operator which filters and selects specific messages
+            reported by the SniffDetector device.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/>
+            <seealso cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.Parse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.SniffDetector.Parse"/> class.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.Format">
+            <summary>
+            Represents an operator which formats a sequence of values as specific
+            SniffDetector register messages.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/>
+            <seealso cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.Format.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.SniffDetector.Format"/> class.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.RawVoltage">
+            <summary>
+            Represents a register that emits a periodic event containing the raw voltage read of the thermistor sensor.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.SniffDetector.RawVoltage.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.SniffDetector.RawVoltage.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.SniffDetector.RawVoltage.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.RawVoltage.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.RawVoltage.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.RawVoltage.FromPayload(Bonsai.Harp.MessageType,System.UInt16)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.RawVoltage.FromPayload(System.Double,Bonsai.Harp.MessageType,System.UInt16)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.TimestampedRawVoltage">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            RawVoltage register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.SniffDetector.TimestampedRawVoltage.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.TimestampedRawVoltage.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltage"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate">
+            <summary>
+            Represents a register that sets the rate at which the RawVoltage event is emitted.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate.FromPayload(Bonsai.Harp.MessageType,System.UInt16)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate.FromPayload(System.Double,Bonsai.Harp.MessageType,System.UInt16)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.TimestampedRawVoltageDispatchRate">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            RawVoltageDispatchRate register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.SniffDetector.TimestampedRawVoltageDispatchRate.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.TimestampedRawVoltageDispatchRate.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.SniffDetector.RawVoltageDispatchRate"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.CreateMessage">
+            <summary>
+            Represents an operator which creates standard message payloads for the
+            SniffDetector device.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.SniffDetector.CreateRawVoltagePayload"/>
+            <seealso cref="T:AllenNeuralDynamics.SniffDetector.CreateRawVoltageDispatchRatePayload"/>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.CreateMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.SniffDetector.CreateMessage"/> class.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.CreateRawVoltagePayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that emits a periodic event containing the raw voltage read of the thermistor sensor.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.SniffDetector.CreateRawVoltagePayload.RawVoltage">
+            <summary>
+            Gets or sets the value that emits a periodic event containing the raw voltage read of the thermistor sensor.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.CreateRawVoltagePayload.GetPayload">
+            <summary>
+            Creates a message payload for the RawVoltage register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.CreateRawVoltagePayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that emits a periodic event containing the raw voltage read of the thermistor sensor.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the RawVoltage register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.CreateTimestampedRawVoltagePayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that emits a periodic event containing the raw voltage read of the thermistor sensor.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.CreateTimestampedRawVoltagePayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that emits a periodic event containing the raw voltage read of the thermistor sensor.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the RawVoltage register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.CreateRawVoltageDispatchRatePayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that sets the rate at which the RawVoltage event is emitted.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.SniffDetector.CreateRawVoltageDispatchRatePayload.RawVoltageDispatchRate">
+            <summary>
+            Gets or sets the value that sets the rate at which the RawVoltage event is emitted.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.CreateRawVoltageDispatchRatePayload.GetPayload">
+            <summary>
+            Creates a message payload for the RawVoltageDispatchRate register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.CreateRawVoltageDispatchRatePayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that sets the rate at which the RawVoltage event is emitted.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the RawVoltageDispatchRate register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.SniffDetector.CreateTimestampedRawVoltageDispatchRatePayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that sets the rate at which the RawVoltage event is emitted.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.SniffDetector.CreateTimestampedRawVoltageDispatchRatePayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that sets the rate at which the RawVoltage event is emitted.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the RawVoltageDispatchRate register.</returns>
+        </member>
+    </members>
+</doc>

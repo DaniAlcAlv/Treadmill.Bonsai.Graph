@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Bonsai.Harp.Design</id>
+    <version>3.5.0</version>
+    <title>Bonsai - Harp Design Library</title>
+    <authors>Bonsai Foundation</authors>
+    <licenseUrl>https://github.com/bonsai-rx/harp/blob/main/LICENSE</licenseUrl>
+    <projectUrl>https://harp-tech.org/</projectUrl>
+    <iconUrl>https://bonsai-rx.org/assets/images/bonsai.png</iconUrl>
+    <description>Bonsai Design Library containing visualizer and editor classes for configuring Harp devices.</description>
+    <copyright>Copyright © Bonsai Foundation CIC and Contributors 2017-2023</copyright>
+    <tags>Bonsai Rx Harp Hardware Protocol Design</tags>
+    <repository type="git" url="https://github.com/bonsai-rx/harp.git" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2">
+        <dependency id="Bonsai.Harp" version="3.5.0" exclude="Build,Analyzers" />
+        <dependency id="Bonsai.Design" version="2.8.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
