@@ -1,11 +1,6 @@
 $scriptPath = $MyInvocation.MyCommand.Path
 $scriptDirectory = Split-Path -Parent $scriptPath
 Set-Location (Split-Path -Parent $scriptDirectory)
-Write-Output "Creating a Python  environment..."
-
-if (-not (Get-Command uv -ErrorAction SilentlyContinue)) {
-    throw "The 'uv' command was not found. See https://docs.astral.sh/uv/getting-started/installation/ for instructions."
-}
 
 Write-Output "Creating a Bonsai environment and installing packages..."
 if (Test-Path -Path "bonsai") {
