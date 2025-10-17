@@ -1,0 +1,1 @@
+This repository contains a Bonsai workflow for visualizing data from a torque sensor conneced to a harp.treadmill board. It also includes a portable version of Bonsai with all the necessary packages to run the workflow.
