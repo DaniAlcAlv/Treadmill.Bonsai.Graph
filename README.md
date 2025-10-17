@@ -2,4 +2,4 @@ This repository contains a Bonsai workflow for visualizing data from a torque se
 It also includes a portable version of Bonsai with all the necessary packages to run the workflow.
 
 -- It can be downloaded as a standalone ZIP file from the Releases tab.
--- Alternatively, it can be bootstrapped by running: ```./scripts/deploy.ps1``` from the root of the repository.
+-- Alternatively, it can be bootstrapped by running: ```./scripts/deploy.ps1``` from the root of the repository, and then opened by running: ``` & ".\bonsai\Bonsai.exe" "./torque_sensor.bonsai" ```
