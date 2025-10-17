@@ -12,8 +12,7 @@ Bonsai/Settings/
 *.exe
 *.exe.settings
 *.bonsai.layout
-local
-.venv
+local.venv
 
 
 # Byte-compiled / optimized / DLL files
