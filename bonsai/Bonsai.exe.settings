@@ -2,18 +2,22 @@
 <EditorSettings>
   <WindowState>Maximized</WindowState>
   <EditorTheme>Light</EditorTheme>
-  <AnnotationPanelSize>397</AnnotationPanelSize>
-  <ExplorerSplitterDistance>442</ExplorerSplitterDistance>
+  <AnnotationPanelSize>396</AnnotationPanelSize>
+  <ExplorerSplitterDistance>699</ExplorerSplitterDistance>
   <DesktopBounds>
-    <X>291</X>
-    <Y>143</Y>
-    <Width>699</Width>
-    <Height>447</Height>
+    <X>699</X>
+    <Y>339</Y>
+    <Width>697</Width>
+    <Height>446</Height>
   </DesktopBounds>
   <RecentlyUsedFiles>
     <RecentlyUsedFile>
-      <Timestamp>2025-10-16T21:28:36.0560866-07:00</Timestamp>
-      <Name>C:\git\Treadmill.Bonsai.Graph\torque_sensor_with_sound.bonsai</Name>
+      <Timestamp>2025-10-21T11:57:43.7608982-07:00</Timestamp>
+      <Name>C:\git\Treadmill.Bonsai.Graph\file\torque_sensor.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-10-21T11:57:24.7729652-07:00</Timestamp>
+      <Name>c:\git\Treadmill.Bonsai.Graph\file\torque_sensor.bonsai</Name>
     </RecentlyUsedFile>
   </RecentlyUsedFiles>
 </EditorSettings>
